@@ -53,7 +53,7 @@ def predict(data:Features):
     response = data.dict()
     try:
         #features
-        features = pd.DataFrame([data.model_dump()])
+        features = pd.DataFrame([data.model_dump()]) #convert features to dataframe 
         #instantiate models
         clf2 = model2()
         model = clf2
@@ -66,7 +66,7 @@ def predict(data:Features):
         predictions = model.get_predictions(features)
         response['success'] = True
         response['message'] = f"model succesfully trained and saved at {filename}. "
-        response['prediction'] = predictions.tolist()
+        response['prediction'] = predictions.tolist() #outputs predictions in list format.
 
     except Exception as e:
         response['success'] = False
