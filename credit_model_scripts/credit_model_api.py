@@ -43,7 +43,7 @@ class Features(BaseModel):
 class FitOut(Features):
     success : bool
     message : str
-    predictions : list
+    predictions : dict
 
     
 #create fitpredict path
